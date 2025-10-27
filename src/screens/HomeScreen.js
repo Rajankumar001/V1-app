@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Image,
   View,
   Text,
   ScrollView,
@@ -42,15 +43,27 @@ export default function HomeScreen({ navigation }) {
   useEffect(() => {
     filterTemples();
   }, [filterTemples]);
+  const imageMap = {
+  "golden_temple.jpg": require("../../assets/golden_temple.jpg"),
+  "vaishno.png": require("../../assets/vaishno.png"),
+  "tirupati.jpg": require("../../assets/tirupati.jpg"),
+  "sidhivinayak.jpg": require("../../assets/sidhivinayak.jpg"),
+  "meenakshi.jpg": require("../../assets/meenakshi.jpg"),
+  "jaganath.jpg": require("../../assets/jaganath.jpg"),
+};
 
   const renderTempleCard = ({ item }) => (
-    <TouchableOpacity style={styles.templeCard}>
+    <TouchableOpacity style={styles.templeCard}
+    onPress={() => navigation.navigate('TempleDetail', { templeData: item })}
+    >
       <LinearGradient
         colors={["#FF6B35", "#FF8A50"]}
         style={styles.templeImageContainer}
       >
-        <Icon name="temple-hindu" size={40} color="#fff" />
-        <Text style={styles.templeImageText}>Temple Image</Text>
+     <Image
+        source={imageMap[item.image]} 
+        style={styles.templeImage} 
+      />
       </LinearGradient>
 
       <View style={styles.templeInfo}>
@@ -211,9 +224,17 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   templeImageContainer: {
-    height: 120,
-    justifyContent: "center",
-    alignItems: "center",
+    height: 120, // This container sets the height
+    justifyContent: "center",
+    alignItems: "center",
+    // The LinearGradient will fill this
+  },
+
+  // --- FIX 2: ADDED THIS STYLE BLOCK ---
+  templeImage: {
+    width: "100%",
+    height: 120, 
+    resizeMode: "cover", 
   },
   templeImageText: {
     color: "#fff",

@@ -1,3 +1,5 @@
+
+
 [
   {
     "id": "1",
@@ -25,7 +27,7 @@
     "festivals": ["Navratri", "Diwali"],
     "verified": true,
     "trustName": "Shri Mata Vaishno Devi Shrine Board",
-    "image": "vaishno_devi.jpg"
+    "image": "vaishno.png"
   },
   {
     "id": "3",
@@ -53,7 +55,7 @@
     "festivals": ["Ganesh Chaturthi", "Maghi Ganesh Jayanti"],
     "verified": true,
     "trustName": "Shree Siddhivinayak Ganapati Temple Trust",
-    "image": "siddhivinayak.jpg"
+    "image": "sidhivinayak.jpg"
   },
   {
     "id": "5",
@@ -81,6 +83,6 @@
     "festivals": ["Rath Yatra", "Snana Yatra"],
     "verified": true,
     "trustName": "Jagannath Temple Administration",
-    "image": "jagannath.jpg"
+    "image": "jaganath.jpg"
   }
 ]
